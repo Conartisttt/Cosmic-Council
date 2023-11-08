@@ -1,7 +1,5 @@
 # Project-1-Team
 
-# 3rd Party APIs - Work-Day - Scheduler
-
 ## Description
 
 We built this application for spiritual beings who are looking for guidance along the path to their higher self. Come to our site, insert your birthday, and generate your horoscope.
