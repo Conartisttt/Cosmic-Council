@@ -1,11 +1,9 @@
-//__________________________________________CONNER MARTIN__________________________________________________
+
 
 // Working Horoscope
 
-const signArr = ["capricorn", "leo", "taurus", "sagittarius", "pisces", "cancer", "scorpio", "aries", "aquarius", "libra", "gemini", "virgo"];
-const sign = "leo";
-
 function findHoroscope() {
+    const sign = //grab from dropdwon 
     fetch('https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=' + sign + '&day=today')
         .then(function (response) {
             return response.json();
@@ -20,7 +18,10 @@ function findHoroscope() {
 }
 
 
+//__________________________________________CONNER MARTIN__________________________________________________
+
 // Working Tarot Card
+
 
 function findTarot() {
     fetch('https://tarot-api-3hv5.onrender.com/api/v1')
@@ -37,6 +38,11 @@ function findTarot() {
             console.log(randomIndex);
             const randomCard = cardsArr[randomIndex];
             console.log(randomCard);
+            const randomPicture = pictureArr[randomIndex];
+
+
+            //TODO:
+            // image . setattribute( "src", "./assets/images/" + [randomIndex] + ".jpg")
         })
 };
 
