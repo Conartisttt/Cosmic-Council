@@ -1,6 +1,6 @@
 //__________________________________________CONNER MARTIN__________________________________________________
 
-// Working Tarot Card
+// Working Horoscope
 
 const signArr = ["capricorn", "leo", "taurus", "sagittarius", "pisces", "cancer", "scorpio", "aries", "aquarius", "libra", "gemini", "virgo"];
 const sign = "leo";
@@ -19,7 +19,9 @@ function findHoroscope() {
         })
 }
 
-findTarot();
+
+// Working Tarot Card
+
 function findTarot() {
     fetch('https://tarot-api-3hv5.onrender.com/api/v1')
         .then(function (response) {
@@ -37,4 +39,7 @@ function findTarot() {
             console.log(randomCard);
         })
 };
+
+findTarot();
+findHoroscope();
 //__________________________________________CONNER MARTIN__________________________________________________
