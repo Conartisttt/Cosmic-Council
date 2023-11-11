@@ -22,11 +22,11 @@
         <p>Discover your zodiac sign's daily horoscope</p>
 
         <label>Choose your sign:</label>
-        <select>
+        <select id="dropdown">
           <option value="aries">Aries</option>
           <option value="taurus">Taurus</option>
           <option value="gemini">Gemini</option>
-          <option value="Cancer">Cancer</option>
+          <option value="cancer">Cancer</option>
           <option value="leo">Leo</option>
           <option value="virgo">Virgo</option>
           <option value="libra">Libra</option>
@@ -36,9 +36,12 @@
           <option value="aquarius">Aquarius</option>
           <option value="pisces">Pisces</option>
         </select>
-        <button class="button is-medium">View Your Horoscope</button>
-
-        <p></p>
+        <button id="dailybutton" class="button is-medium">View Your Horoscope</button>
+        <div id="display">
+            <h3 id="zodiac"></h3>
+            <p id="date"></p>
+            <p id="horoscope"></p>
+        </div>
     </main>
 
    <section class="columns">
@@ -55,6 +58,13 @@
             <img>
         </div>
     </section>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
     <script src="./assets/js/script.js"></script>
 
 </body>
