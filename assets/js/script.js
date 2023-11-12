@@ -1,6 +1,6 @@
 // __________________________________________SAM BRESLIN_____________________________________________________
 
-// Working Horoscope
+// **** Working Horoscope ****
 
 // established variables using HTML id selectors
 const dropDown = document.getElementById('dropdown');
@@ -39,6 +39,51 @@ function displayHoroscope() {
 dropDown.addEventListener('change', findHoroscope);
 viewHoroscopeBtn.addEventListener('click', displayHoroscope);
 
+//  **** Moon Phase Image ****
+
+function moonPhase() {
+    // check API key
+    const apiKey = '55caeb9ec0msh6e0357c32814c41p1b3256jsn7795dd532024';
+    fetch('https://astronomy.p.rapidapi.com/api/v2/studio/moon-phase', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+            'x-rapidapi-key': apiKey,
+            "x-rapidapi-host": "astronomy.p.rapidapi.com"
+        },
+        body: {
+            format: 'png',
+            observer: {
+                date: '2020-11-01',
+                latitude: 6.56774,
+                longitude: 79.88956
+            },
+            style: {
+                backgroundColor: 'red',
+                backgroundStyle: 'stars',
+                headingColor: 'white',
+                moonStyle: 'sketch',
+                textColor: 'red'
+            },
+            view: {
+                type: 'portrait-simple'
+            }
+        }
+    })
+    .then(function (response) {
+        console.log(response, typeof response);
+        return response.blob();
+    })
+        .then((blob) => {
+            const imageUrl = URL.createObjectURL(blob);
+            const imageElement = document.createElement("img");
+            imageElement.src = imageUrl;
+            const moons = document.getElementById('moons');
+            moons.appendChild(imageElement);
+        });
+}
+
+moonPhase();
 
 // _________________________________________SAM BRESLIN____________________________________________________
 
