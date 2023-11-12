@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cosmic Council</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=IM+Fell+DW+Pica:ital@1&family=Leckerli+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=IM+Fell+DW+Pica:ital@1&family=Leckerli+One&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -15,7 +17,8 @@
 <body>
     <header class="hero">
         <h1 class="title">Cosmic Counsel</h1>
-        <p class="subtitle">Find daily horoscopes, get a random tarot card reading, and see tonights current moonphase!</p>
+        <p class="subtitle">Find daily horoscopes, get a random tarot card reading, and see tonights current moonphase!
+        </p>
     </header>
     <main class="columnOne is-full">
         <h1>Daily Horoscope</h1>
@@ -23,18 +26,18 @@
 
         <label>Choose your sign:</label>
         <select id="dropdown">
-          <option value="aries">Aries</option>
-          <option value="taurus">Taurus</option>
-          <option value="gemini">Gemini</option>
-          <option value="cancer">Cancer</option>
-          <option value="leo">Leo</option>
-          <option value="virgo">Virgo</option>
-          <option value="libra">Libra</option>
-          <option value="scorpio">Scorpio</option>
-          <option value="sagittarius">Sagittarius</option>
-          <option value="capricorn">Capricorn</option>
-          <option value="aquarius">Aquarius</option>
-          <option value="pisces">Pisces</option>
+            <option value="aries">Aries</option>
+            <option value="taurus">Taurus</option>
+            <option value="gemini">Gemini</option>
+            <option value="cancer">Cancer</option>
+            <option value="leo">Leo</option>
+            <option value="virgo">Virgo</option>
+            <option value="libra">Libra</option>
+            <option value="scorpio">Scorpio</option>
+            <option value="sagittarius">Sagittarius</option>
+            <option value="capricorn">Capricorn</option>
+            <option value="aquarius">Aquarius</option>
+            <option value="pisces">Pisces</option>
         </select>
         <button id="dailybutton" class="button is-medium">View Your Horoscope</button>
         <div id="display">
@@ -44,27 +47,25 @@
         </div>
     </main>
 
-   <section class="columns">
+    <section class="columns">
         <div class="column is-half" id="columnTwo">
             <h1>Tarot Card</h1>
-            <button class="button is-medium">Pull Your Card</button>
-            <img>
-            <p></p>
+            <button id="pull-card-btn" class="button is-medium">Pull Your Card</button>
+            <div id="card-div">
+                <img id="tarot-card-img" src="./assets/images/z_BACK.jpg">
+            </div>
             <button class="button is-medium">Save Your Card</button>
         </div>
 
-         <div class="column is-half" id="columnThree">
-             <h1>Today's Moon Phase</h1>
+        <div class="column is-half" id="columnThree">
+            <h1>Today's Moon Phase</h1>
             <img>
         </div>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
 
 </body>

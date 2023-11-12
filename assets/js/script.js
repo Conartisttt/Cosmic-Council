@@ -47,6 +47,13 @@ viewHoroscopeBtn.addEventListener('click', displayHoroscope);
 
 // Working Tarot Card
 
+const tarotImage = document.getElementById("tarot-card-img");
+const cardDiv = document.getElementById("card-div");
+const pullCardBtn = document.getElementById("pull-card-btn");
+
+pullCardBtn.addEventListener("click", findTarot);
+const titleEl = document.createElement("h2");
+const cardDesc = document.createElement("p");
 
 function findTarot() {
     fetch('https://tarot-api-3hv5.onrender.com/api/v1')
@@ -54,23 +61,18 @@ function findTarot() {
             return response.json();
         })
         .then(function (data) {
-            console.log(data)
+            cardDesc.textContent = "";
+            titleEl.textContent = "";
             const cardsArr = data.cards;
-            console.log(cardsArr);
             const cardsArrLength = cardsArr.length;
-            console.log(cardsArrLength);
             const randomIndex = Math.floor(Math.random() * cardsArrLength);
-            console.log(randomIndex);
             const randomCard = cardsArr[randomIndex];
-            console.log(randomCard);
-            const randomPicture = pictureArr[randomIndex];
-
-
-            //TODO:
-            // image . setattribute( "src", "./assets/images/" + [randomIndex] + ".jpg")
+            console.log(randomCard); //leaving this for now to help with reverse pull this week
+            titleEl.textContent = randomCard.name;
+            cardDiv.prepend(titleEl);
+            cardDesc.textContent = randomCard.meaning_up;
+            cardDiv.appendChild(cardDesc);
+            tarotImage.setAttribute("src", "./assets/images/" + randomIndex + ".jpg")
         })
 };
-
-findTarot();
-// findHoroscope(); -- no longer needed - function called on event listener
 //__________________________________________CONNER MARTIN__________________________________________________
