@@ -1,5 +1,7 @@
 /*-------------Daelyn Hiduchick---------*/
-
+html {
+    background-color: var(--pink);
+}
 :root {
     --green: #c2edc9;
     --blue: #a6d2e1;
@@ -13,7 +15,7 @@
 body {
     font-family:'Inknut Antiqua';
     font-size: 35px;
-    margin: 10px;
+    background-color: var(--pink);
 }
 
 .button {
