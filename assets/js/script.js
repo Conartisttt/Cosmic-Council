@@ -2,7 +2,7 @@
 
 // **** Working Horoscope ****
 
-established variables using HTML id selectors
+// established variables using HTML id selectors
 const dropDown = document.getElementById('dropdown');
 const viewHoroscopeBtn = document.getElementById('dailybutton');
 const title = document.getElementById('zodiac');
@@ -146,24 +146,34 @@ if (navigator.geolocation) {
 // const titleEl = document.createElement("h2");
 // const cardDesc = document.createElement("p");
 
-// function findTarot() {
-//     fetch('https://tarot-api-3hv5.onrender.com/api/v1')
-//         .then(function (response) {
-//             return response.json();
-//         })
-//         .then(function (data) {
-//             cardDesc.textContent = "";
-//             titleEl.textContent = "";
-//             const cardsArr = data.cards;
-//             const cardsArrLength = cardsArr.length;
-//             const randomIndex = Math.floor(Math.random() * cardsArrLength);
-//             const randomCard = cardsArr[randomIndex];
-//             console.log(randomCard); //leaving this for now to help with reverse pull this week
-//             titleEl.textContent = randomCard.name;
-//             cardDiv.prepend(titleEl);
-//             cardDesc.textContent = randomCard.meaning_up;
-//             cardDiv.appendChild(cardDesc);
-//             tarotImage.setAttribute("src", "./assets/images/" + randomIndex + ".jpg")
-//         })
-// };
+function findTarot() {
+    fetch('https://tarot-api-3hv5.onrender.com/api/v1')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            tarotImage.classList.remove("image-flip");
+            cardDesc.textContent = "";
+            titleEl.textContent = "";
+            const meaningArr = [];
+            const cardsArr = data.cards;
+            const cardsArrLength = cardsArr.length;
+            const randomCardIndex = Math.floor(Math.random() * cardsArrLength);
+            const randomCard = cardsArr[randomCardIndex];
+            meaningArr.push(randomCard.meaning_up);
+            meaningArr.push(randomCard.meaning_rev);
+            const meaningLength = meaningArr.length
+            const randomDirectionIndex = Math.floor(Math.random() * meaningLength);
+            console.log(randomCard); //leaving this for now to help with reverse pull this week
+            titleEl.textContent = randomCard.name;
+            cardDiv.prepend(titleEl);
+            cardDesc.textContent = meaningArr[randomDirectionIndex];
+            cardDiv.appendChild(cardDesc);
+            tarotImage.setAttribute("src", "./assets/images/" + randomCardIndex + ".jpg");
+            if (randomDirectionIndex === 1) {
+                tarotImage.classList.add("image-flip");
+                titleEl.textContent = randomCard.name + " - Reverse Pull";
+            };
+        })
+};
 //__________________________________________CONNER MARTIN__________________________________________________
