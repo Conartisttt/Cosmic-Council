@@ -106,6 +106,7 @@ function findTarot() {
             return response.json();
         })
         .then(function (data) {
+            tarotImage.classList.remove("image-flip");
             cardDesc.textContent = "";
             titleEl.textContent = "";
             const meaningArr = [];
@@ -120,13 +121,11 @@ function findTarot() {
             console.log(randomCard); //leaving this for now to help with reverse pull this week
             titleEl.textContent = randomCard.name;
             cardDiv.prepend(titleEl);
-            console.log(meaningArr);
             cardDesc.textContent = meaningArr[randomDirectionIndex];
-            console.log(randomDirectionIndex);
             cardDiv.appendChild(cardDesc);
-            tarotImage.setAttribute("src", "./assets/images/" + randomCardIndex + ".jpg")
+            tarotImage.setAttribute("src", "./assets/images/" + randomCardIndex + ".jpg");
             if (randomDirectionIndex === 1) {
-                tarotImage.classList.add("image-flip")
+                tarotImage.classList.add("image-flip");
                 titleEl.textContent = randomCard.name + " - Reverse Pull";
             };
         })
