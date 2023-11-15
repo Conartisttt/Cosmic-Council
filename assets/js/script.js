@@ -64,7 +64,7 @@ if (navigator.geolocation) {
             backgroundStyle: 'stars',
             headingColor: 'white',
             moonStyle: 'sketch',
-            textColor: 'red'
+            textColor: 'white'
         },
         view: {
             type: 'portrait-simple'
@@ -90,6 +90,8 @@ if (navigator.geolocation) {
     imageElement.src = imageSource;
     const moons = document.getElementById('moons');
     moons.appendChild(imageElement);
+    imageElement.style.height = '500px';
+    imageElement.style.width = '300px';
 })
     });
   } else {
