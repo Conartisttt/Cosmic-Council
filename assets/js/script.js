@@ -39,49 +39,6 @@ function displayHoroscope() {
 dropDown.addEventListener('change', findHoroscope);
 viewHoroscopeBtn.addEventListener('click', displayHoroscope);
 
-//  **** Moon Phase Image ****
-
-// function moonPhase() {
-//     // check API key
-//     const apiKey = '55caeb9ec0msh6e0357c32814c41p1b3256jsn7795dd532024';
-//     fetch('https://astronomy.p.rapidapi.com/api/v2/studio/moon-phase', {
-//         method: 'POST',
-//         headers: {
-//             'content-type': 'application/json',
-//             'x-rapidapi-key': apiKey,
-//             "x-rapidapi-host": "astronomy.p.rapidapi.com"
-//         },
-//         body: {
-//             format: 'png',
-//             observer: {
-//                 date: '2020-11-01',
-//                 latitude: 6.56774,
-//                 longitude: 79.88956
-//             },
-//             style: {
-//                 backgroundColor: 'red',
-//                 backgroundStyle: 'stars',
-//                 headingColor: 'white',
-//                 moonStyle: 'sketch',
-//                 textColor: 'red'
-//             },
-//             view: {
-//                 type: 'portrait-simple'
-//             }
-//         }
-//     })
-//     .then(function (response) {
-//         console.log(response, typeof response);
-//         return response.blob();
-//     })
-//         .then((blob) => {
-//             const imageUrl = URL.createObjectURL(blob);
-//             const imageElement = document.createElement("img");
-//             imageElement.src = imageUrl;
-//             const moons = document.getElementById('moons');
-//             moons.appendChild(imageElement);
-//         });
-// }
 
 // ******** NEW MOON PHASE ***************
 
@@ -91,12 +48,13 @@ if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
+      const moonDate = dayjs().add(-1, 'day');
      
 
       const data = {
         format: 'png',
         observer: {
-            date: '2020-11-01',
+            date: moonDate,
             latitude: latitude,
             longitude: longitude
         },
@@ -123,7 +81,13 @@ if (navigator.geolocation) {
 }).then(function(response) {
     return response.json();
 }).then(function(data) {
-    console.log(data);
+    console.log(data.data);
+    const imageSource = data.data.imageUrl;
+    console.log(imageSource);
+    const imageElement = document.createElement("img");
+    imageElement.src = imageSource;
+    const moons = document.getElementById('moons');
+    moons.appendChild(imageElement);
 })
     });
   } else {
@@ -138,13 +102,13 @@ if (navigator.geolocation) {
 
 // Working Tarot Card
 
-// const tarotImage = document.getElementById("tarot-card-img");
-// const cardDiv = document.getElementById("card-div");
-// const pullCardBtn = document.getElementById("pull-card-btn");
+const tarotImage = document.getElementById("tarot-card-img");
+const cardDiv = document.getElementById("card-div");
+const pullCardBtn = document.getElementById("pull-card-btn");
 
-// pullCardBtn.addEventListener("click", findTarot);
-// const titleEl = document.createElement("h2");
-// const cardDesc = document.createElement("p");
+pullCardBtn.addEventListener("click", findTarot);
+const titleEl = document.createElement("h2");
+const cardDesc = document.createElement("p");
 
 function findTarot() {
     fetch('https://tarot-api-3hv5.onrender.com/api/v1')
