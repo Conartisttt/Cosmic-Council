@@ -44,6 +44,7 @@ viewHoroscopeBtn.addEventListener('click', displayHoroscope);
 
 const authString = btoa(`dded7d1b-9092-4ba7-b4c2-7d8ecd9f4b55:f90d146b196dce687aed0a82ef0915f1134236174b57a8df181b3ba88200c77a6a8d85c25c56451b5ac08c94cc3227fc6e62e81fae94e2c9c7cfd3ad92e50c9466fb5db2fc7dbb52ba712aa0b1336384b062f7fcf8c86408c47c755000bd4bc9b7850de3d5414ad3f35a91d82b45c6a9`);
 
+// sets the parameters for the api using variables to establish user's location and date
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       const latitude = position.coords.latitude;
@@ -70,7 +71,7 @@ if (navigator.geolocation) {
         }
     }
 
-      
+    //   call to api using set credentials
       fetch("https://api.astronomyapi.com/api/v2/studio/moon-phase", {
     method: "POST",
     headers: {
@@ -82,6 +83,7 @@ if (navigator.geolocation) {
     return response.json();
 }).then(function(data) {
     console.log(data.data);
+    // creates and appends image tag to html
     const imageSource = data.data.imageUrl;
     console.log(imageSource);
     const imageElement = document.createElement("img");
