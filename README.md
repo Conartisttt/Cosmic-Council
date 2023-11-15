@@ -7,7 +7,7 @@ so that I can find my higher self.
 
 As a spiritual being,
 I want to pull a single tarot card,
-so that I may read its interpretted meaning.
+so that I may read its interpreted meaning.
 
 ## Description
 
