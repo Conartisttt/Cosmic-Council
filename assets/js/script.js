@@ -49,7 +49,8 @@ if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
-      const moonDate = dayjs().add(-1, 'day');
+      const moonDate = dayjs();
+    //   .add(-1, 'day');
      
 
       const data = {

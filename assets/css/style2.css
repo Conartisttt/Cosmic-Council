@@ -1,3 +1,7 @@
 .columnOne {
     text-align: center;
 }
+
+#homepage {
+    background-color: var(--tricorn-black);
+}
