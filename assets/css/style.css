@@ -1,26 +1,30 @@
 /*-------------Daelyn Hiduchick---------*/
 html {
-    background-color: var(--pink);
+    background-color: var(--reflective);
 }
 :root {
-    --green: #c2edc9;
-    --blue: #a6d2e1;
-    --purple: #a8a6db;
-    --lilac: #d3bae9;
-    --pink: #f3d0f5;
-    --pale: #ffe7f7;
+    --tricorn-black:#2d2d2f;
+    --coconut-husk:#6e593e;
+    --connors-lakefront: #344c57;
+    --briny: #287d92;
+    --reflective: #f6f7f1;
+    --jade-dragon: #909787;
+    --bluebell: #a8d2ea;
+    --fountain: #62b1cf;
+    --shagreen: #c9cd9b;
+    --gold: #d1a657;
     --mainTextColor: black;
 }
 
 body {
     font-family:'Inknut Antiqua';
-    font-size: 35px;
-    background-color: var(--pink);
+    font-size: 20px;
+    background-color: var(--reflective);
 }
 
 .button {
-    background-color: var(--pale);
-    font-size: 20px;
+    background-color: var(--shagreen);
+    font-size: 10px;
     font-family:'Inknut Antiqua';
 }
 
@@ -29,55 +33,62 @@ body {
 }
 
 .columnOne {
-    background-color: var(--lilac);
+    background-color: var(--bluebell);
 }
 
 #columnTwo {
-    background-color: var(--green);
+    background-color: var(--jade-dragon);
     margin-right: 5px;
+    color: var(--reflective);
 }
 
 #columnThree {
-    background-color: var(--blue);
+    background-color: var(--connors-lakefront);
+    color: var(--reflective);
 }
 
 .hero {
-    background-color: var(--pale);
+    background-image: url('https://apod.nasa.gov/apod/ap141130.html');
+    background-color: var(--tricorn-black);
 }
 
 .title {
-    font-size: 50px;
+    font-size: 30px;
     text-align: center;
+    color: var(--reflective);
+    padding: 10px;
 }
 
 .subtitle {
-    font-size: 25px;
+    font-size: 15px;
     text-align: center;
+    color: var(--reflective);
+    padding-bottom: 7px;
 }
 
 #dropdown {
     width: 200px;
     height: 60px;
-    font-size: 25px;
+    font-size: 15px;
     background-color: var(--pale);
     font-family:'Inknut Antiqua';
 }
 
 
 #pull-card-btn {
-    font-size: 20px;
+    font-size: 15px;
     font-family:'Inknut Antiqua';
 }
 
 
 #dailybutton{
-    font-size: 20px;
+    font-size: 15px;
     font-family:'Inknut Antiqua';
 }
 
 #tarot-card-img {
-    max-height: 600px;
-    max-width: 600px;
+    max-height: 400px;
+    max-width: 400px;
 }
 
 .image-flip {
