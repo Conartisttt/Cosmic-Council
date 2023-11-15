@@ -70,7 +70,7 @@ if (navigator.geolocation) {
             type: 'portrait-simple'
         }
     }
-
+//comment
     //   call to api using set credentials
       fetch("https://api.astronomyapi.com/api/v2/studio/moon-phase", {
     method: "POST",
