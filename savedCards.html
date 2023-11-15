@@ -15,6 +15,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=IM+Fell+DW+Pica:ital@1&family=Inknut+Antiqua:wght@500&family=Leckerli+One&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style2.css">
 </head>
 
 <body>
@@ -22,55 +23,32 @@
         <h1 class="title">✨Cosmic Counsel✨</h1>
         <p class="subtitle">Find daily horoscopes, get a random tarot card reading, and see tonights current moonphase!
         </p>
-        <button id="saved-cards-btn" class="button is-medium">See Your Saved Cards</button>
+        <button id="homepage" class="button is-medium">Return to Home Page</button>
     </header>
     <main class="columnOne is-full">
-        <h1>Daily Horoscope</h1>
-        <p>Discover your zodiac sign's daily horoscope</p>
-
-        <label>Choose your sign:</label>
-        <select id="dropdown">
-            <option value="aries">Aries</option>
-            <option value="taurus">Taurus</option>
-            <option value="gemini">Gemini</option>
-            <option value="cancer">Cancer</option>
-            <option value="leo">Leo</option>
-            <option value="virgo">Virgo</option>
-            <option value="libra">Libra</option>
-            <option value="scorpio">Scorpio</option>
-            <option value="sagittarius">Sagittarius</option>
-            <option value="capricorn">Capricorn</option>
-            <option value="aquarius">Aquarius</option>
-            <option value="pisces">Pisces</option>
-        </select>
-        <button id="dailybutton" class="button is-medium">View Your Horoscope</button>
-        <div id="display">
-            <h3 id="zodiac"></h3>
-            <p id="date"></p>
-            <p id="horoscope"></p>
-        </div>
+        <h1> ☆Your Saved Cards ☆</h1>
     </main>
 
-    <section class="columns">
-        <div class="column is-half" id="columnTwo">
+    <!-- USE THIS SECTION ID: saved-cards TO GET ELEMENT BY ID AND APPEND ELEMENTS SAVED IN LOCAL STORAGE-->
+    <section id="saved-cards" class="columns"> 
+
+<!-- LEAVING THIS HERE AS A MINI TEMPLATE FOR YOU AY - TO BE GENERATED FROM LOCAL STORAGE USING JAVASCRIPT -->
+        <div class="column is-one-third" id="columnTwo"> 
             <h1>Tarot Card</h1>
-            <button id="pull-card-btn" class="button is-medium">Pull Your Card</button>
             <div id="card-div">
                 <img id="tarot-card-img" src="./assets/images/z_BACK.jpg">
             </div>
-            <button class="button is-medium">Save Your Card</button>
+            <!-- DELETE CARD FUNCTIONALITY - ID: delete-btn to remove card from local storage-->
+            <button id="delete-btn" class="button is-medium">Delete Card</button>
         </div>
 
-        <div class="column is-half" id="columnThree">
-            <h1>Today's Moon Phase</h1>
-            <div id="moons"></div>
-        </div>
     </section>
+
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
         integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script2.js"></script>
 
 </body>
 
