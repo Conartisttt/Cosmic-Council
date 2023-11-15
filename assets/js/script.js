@@ -108,7 +108,7 @@ const tarotImage = document.getElementById("tarot-card-img");
 const cardDiv = document.getElementById("card-div");
 const pullCardBtn = document.getElementById("pull-card-btn");
 
-pullCardBtn.addEventListener("click", findTarot);
+pullCardBtn.addEventListener("click", generateCard);
 const titleEl = document.createElement("h2");
 const cardDesc = document.createElement("p");
 
@@ -118,28 +118,43 @@ function findTarot() {
             return response.json();
         })
         .then(function (data) {
-            tarotImage.classList.remove("image-flip");
-            cardDesc.textContent = "";
-            titleEl.textContent = "";
-            const meaningArr = [];
-            const cardsArr = data.cards;
-            const cardsArrLength = cardsArr.length;
-            const randomCardIndex = Math.floor(Math.random() * cardsArrLength);
-            const randomCard = cardsArr[randomCardIndex];
-            meaningArr.push(randomCard.meaning_up);
-            meaningArr.push(randomCard.meaning_rev);
-            const meaningLength = meaningArr.length
-            const randomDirectionIndex = Math.floor(Math.random() * meaningLength);
-            console.log(randomCard); //leaving this for now to help with reverse pull this week
-            titleEl.textContent = randomCard.name;
-            cardDiv.prepend(titleEl);
-            cardDesc.textContent = meaningArr[randomDirectionIndex];
-            cardDiv.appendChild(cardDesc);
-            tarotImage.setAttribute("src", "./assets/images/" + randomCardIndex + ".jpg");
-            if (randomDirectionIndex === 1) {
-                tarotImage.classList.add("image-flip");
-                titleEl.textContent = randomCard.name + " - Reverse Pull";
-            };
+            createArray(data);
         })
 };
+
+const cardsArr = [];
+
+function createArray(cards) {
+    const tarotCardsArr = cards.cards;
+    cardsArr.push(...tarotCardsArr);
+    console.log(cardsArr);
+}
+
+function generateCard() {
+    tarotImage.classList.remove("image-flip");
+    cardDesc.textContent = "";
+    titleEl.textContent = "";
+    const meaningArr = [];
+    const cardsArrLength = cardsArr.length;
+    const randomCardIndex = Math.floor(Math.random() * cardsArrLength);
+    const randomCard = cardsArr[randomCardIndex];
+    meaningArr.push(randomCard.meaning_up);
+    meaningArr.push(randomCard.meaning_rev);
+    const meaningLength = meaningArr.length
+    const randomDirectionIndex = Math.floor(Math.random() * meaningLength);
+    console.log(randomCard); //leaving this for now to help with reverse pull this week
+    titleEl.textContent = randomCard.name;
+    cardDiv.prepend(titleEl);
+    cardDesc.textContent = meaningArr[randomDirectionIndex];
+    cardDiv.appendChild(cardDesc);
+    tarotImage.setAttribute("src", "./assets/images/" + randomCardIndex + ".jpg");
+    if (randomDirectionIndex === 1) {
+        tarotImage.classList.add("image-flip");
+        titleEl.textContent = randomCard.name + " - Reverse Pull";
+    };
+};
+
+findTarot();
+
+
 //__________________________________________CONNER MARTIN__________________________________________________
