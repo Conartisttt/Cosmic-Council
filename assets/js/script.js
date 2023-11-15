@@ -64,13 +64,13 @@ if (navigator.geolocation) {
             backgroundStyle: 'stars',
             headingColor: 'white',
             moonStyle: 'sketch',
-            textColor: 'red'
+            textColor: 'white'
         },
         view: {
             type: 'portrait-simple'
         }
     }
-
+//comment
     //   call to api using set credentials
       fetch("https://api.astronomyapi.com/api/v2/studio/moon-phase", {
     method: "POST",
@@ -90,6 +90,8 @@ if (navigator.geolocation) {
     imageElement.src = imageSource;
     const moons = document.getElementById('moons');
     moons.appendChild(imageElement);
+    imageElement.style.height = '500px';
+    imageElement.style.width = '300px';
 })
     });
   } else {

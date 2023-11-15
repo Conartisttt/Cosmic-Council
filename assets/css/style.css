@@ -27,6 +27,7 @@ body {
     font-size: 10px;
     font-family:'Inknut Antiqua';
     color: var(--reflective);
+    border-radius: 8px;
 }
 
 .columns {
@@ -42,7 +43,7 @@ body {
 
 #columnTwo {
     background-color: var(--jade-dragon);
-    margin-right: 5px;
+    margin:10px;
     color: var(--reflective);
     padding: 5px;
     text-align: center;
@@ -51,6 +52,7 @@ body {
 #columnThree {
     background-color: var(--connors-lakefront);
     color: var(--reflective);
+    margin: 10px;
 }
 
 .hero {
@@ -73,11 +75,12 @@ body {
 }
 
 #dropdown {
-    width: 200px;
-    height: 60px;
+    width: 150px;
+    height: 40px;
     font-size: 15px;
     background-color: var(--jade-dragon);
     font-family:'Inknut Antiqua';
+    border-radius: 8px;
 }
 
 
@@ -99,4 +102,23 @@ body {
 
 .image-flip {
     transform: scaleY(-1);
+}
+
+#columnThree {
+    text-align: center;
+}
+
+#moons {
+    text-align: center;
+    padding: 10px;
+}
+
+
+.button:hover {
+    box-shadow: 0 3px 6px 0;
+    color: var(--reflective);
+}
+
+#tarot-card-img {
+    padding: 7px;
 }
