@@ -156,5 +156,12 @@ function generateCard() {
 
 findTarot();
 
+const saveBtn = document.getElementById("saved-cards-btn");
+
+saveBtn.addEventListener("click", goToSavedCards);
+
+function goToSavedCards() {
+    window.location.href = "savedCards.html"
+}
 
 //__________________________________________CONNER MARTIN__________________________________________________
