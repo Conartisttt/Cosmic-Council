@@ -21,7 +21,26 @@ body {
     font-size: 20px;
     background-color: var(--reflective);
 }
+.hero {
+    background-image: url('https://m.media-amazon.com/images/I/91gKsl048vL._AC_SL1500_.jpg');
+    background-color: var(--tricorn-black);
+}
 
+.title {
+    font-size: 30px;
+    text-align: center;
+    color: var(--reflective);
+    padding: 10px;
+    text-shadow: 3px 3px 3px black;
+}
+
+.subtitle {
+    font-size: 15px;
+    text-align: center;
+    color: var(--reflective);
+    padding-bottom: 7px;
+    text-shadow: 3px 3px 3px black;
+}
 .button {
     background-color: var(--connors-lakefront);
     font-size: 10px;
@@ -53,25 +72,15 @@ body {
     background-color: var(--connors-lakefront);
     color: var(--reflective);
     margin: 10px;
+    text-align: center;
 }
 
-.hero {
-    background-image: url('https://m.media-amazon.com/images/I/91gKsl048vL._AC_SL1500_.jpg');
+.columnFour {
     background-color: var(--tricorn-black);
-}
-
-.title {
-    font-size: 30px;
-    text-align: center;
     color: var(--reflective);
-    padding: 10px;
-}
-
-.subtitle {
-    font-size: 15px;
-    text-align: center;
-    color: var(--reflective);
-    padding-bottom: 7px;
+    font-size: 20px;
+    padding: 20px;
+    margin: 10px;
 }
 
 #dropdown {
@@ -104,10 +113,6 @@ body {
     transform: scaleY(-1);
 }
 
-#columnThree {
-    text-align: center;
-}
-
 #moons {
     text-align: center;
     padding: 10px;
@@ -121,4 +126,8 @@ body {
 
 #tarot-card-img {
     padding: 7px;
+}
+
+#saved-cards-btn {
+    background-color: var(--tricorn-black);
 }
