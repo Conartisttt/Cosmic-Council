@@ -39,64 +39,23 @@ function displayHoroscope() {
 dropDown.addEventListener('change', findHoroscope);
 viewHoroscopeBtn.addEventListener('click', displayHoroscope);
 
-//  **** Moon Phase Image ****
 
-// function moonPhase() {
-//     // check API key
-//     const apiKey = '55caeb9ec0msh6e0357c32814c41p1b3256jsn7795dd532024';
-//     fetch('https://astronomy.p.rapidapi.com/api/v2/studio/moon-phase', {
-//         method: 'POST',
-//         headers: {
-//             'content-type': 'application/json',
-//             'x-rapidapi-key': apiKey,
-//             "x-rapidapi-host": "astronomy.p.rapidapi.com"
-//         },
-//         body: {
-//             format: 'png',
-//             observer: {
-//                 date: '2020-11-01',
-//                 latitude: 6.56774,
-//                 longitude: 79.88956
-//             },
-//             style: {
-//                 backgroundColor: 'red',
-//                 backgroundStyle: 'stars',
-//                 headingColor: 'white',
-//                 moonStyle: 'sketch',
-//                 textColor: 'red'
-//             },
-//             view: {
-//                 type: 'portrait-simple'
-//             }
-//         }
-//     })
-//     .then(function (response) {
-//         console.log(response, typeof response);
-//         return response.blob();
-//     })
-//         .then((blob) => {
-//             const imageUrl = URL.createObjectURL(blob);
-//             const imageElement = document.createElement("img");
-//             imageElement.src = imageUrl;
-//             const moons = document.getElementById('moons');
-//             moons.appendChild(imageElement);
-//         });
-// }
-
-// ******** NEW MOON PHASE ***************
+// ******** NEW MOON PHASE *************** DAELYN HIDUCHICK & SAM BRESLIN
 
 const authString = btoa(`dded7d1b-9092-4ba7-b4c2-7d8ecd9f4b55:f90d146b196dce687aed0a82ef0915f1134236174b57a8df181b3ba88200c77a6a8d85c25c56451b5ac08c94cc3227fc6e62e81fae94e2c9c7cfd3ad92e50c9466fb5db2fc7dbb52ba712aa0b1336384b062f7fcf8c86408c47c755000bd4bc9b7850de3d5414ad3f35a91d82b45c6a9`);
 
+// sets the parameters for the api using variables to establish user's location and date
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
+      const moonDate = dayjs().add(-1, 'day');
      
 
       const data = {
         format: 'png',
         observer: {
-            date: '2020-11-01',
+            date: moonDate,
             latitude: latitude,
             longitude: longitude
         },
@@ -112,7 +71,7 @@ if (navigator.geolocation) {
         }
     }
 
-      
+    //   call to api using set credentials
       fetch("https://api.astronomyapi.com/api/v2/studio/moon-phase", {
     method: "POST",
     headers: {
@@ -123,7 +82,14 @@ if (navigator.geolocation) {
 }).then(function(response) {
     return response.json();
 }).then(function(data) {
-    console.log(data);
+    console.log(data.data);
+    // creates and appends image tag to html
+    const imageSource = data.data.imageUrl;
+    console.log(imageSource);
+    const imageElement = document.createElement("img");
+    imageElement.src = imageSource;
+    const moons = document.getElementById('moons');
+    moons.appendChild(imageElement);
 })
     });
   } else {
