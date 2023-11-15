@@ -23,9 +23,10 @@ body {
 }
 
 .button {
-    background-color: var(--shagreen);
+    background-color: var(--connors-lakefront);
     font-size: 10px;
     font-family:'Inknut Antiqua';
+    color: var(--reflective);
 }
 
 .columns {
@@ -33,13 +34,18 @@ body {
 }
 
 .columnOne {
-    background-color: var(--bluebell);
+    background-color: var(--tricorn-black);
+    color: var(--reflective);
+    padding: 50px;
+    margin: 5px;
 }
 
 #columnTwo {
     background-color: var(--jade-dragon);
     margin-right: 5px;
     color: var(--reflective);
+    padding: 5px;
+    text-align: center;
 }
 
 #columnThree {
@@ -48,7 +54,7 @@ body {
 }
 
 .hero {
-    background-image: url('https://apod.nasa.gov/apod/ap141130.html');
+    background-image: url('https://m.media-amazon.com/images/I/91gKsl048vL._AC_SL1500_.jpg');
     background-color: var(--tricorn-black);
 }
 
@@ -70,7 +76,7 @@ body {
     width: 200px;
     height: 60px;
     font-size: 15px;
-    background-color: var(--pale);
+    background-color: var(--jade-dragon);
     font-family:'Inknut Antiqua';
 }
 
