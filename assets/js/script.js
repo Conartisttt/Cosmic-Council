@@ -46,58 +46,58 @@ const authString = btoa(`dded7d1b-9092-4ba7-b4c2-7d8ecd9f4b55:f90d146b196dce687a
 
 // sets the parameters for the api using variables to establish user's location and date
 if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-      const moonDate = dayjs();
-    //   .add(-1, 'day');
-     
+    navigator.geolocation.getCurrentPosition(function (position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        const moonDate = dayjs();
+        //   .add(-1, 'day');
 
-      const data = {
-        format: 'png',
-        observer: {
-            date: moonDate,
-            latitude: latitude,
-            longitude: longitude
-        },
-        style: {
-            backgroundColor: 'red',
-            backgroundStyle: 'stars',
-            headingColor: 'white',
-            moonStyle: 'sketch',
-            textColor: 'white'
-        },
-        view: {
-            type: 'portrait-simple'
+
+        const data = {
+            format: 'png',
+            observer: {
+                date: moonDate,
+                latitude: latitude,
+                longitude: longitude
+            },
+            style: {
+                backgroundColor: 'red',
+                backgroundStyle: 'stars',
+                headingColor: 'white',
+                moonStyle: 'sketch',
+                textColor: 'white'
+            },
+            view: {
+                type: 'portrait-simple'
+            }
         }
-    }
-//comment
-    //   call to api using set credentials
-      fetch("https://api.astronomyapi.com/api/v2/studio/moon-phase", {
-    method: "POST",
-    headers: {
-        'Authorization': "Basic " + authString,
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-}).then(function(response) {
-    return response.json();
-}).then(function(data) {
-    console.log(data.data);
-    // creates and appends image tag to html
-    const imageSource = data.data.imageUrl;
-    console.log(imageSource);
-    const imageElement = document.createElement("img");
-    imageElement.src = imageSource;
-    const moons = document.getElementById('moons');
-    moons.appendChild(imageElement);
-    imageElement.style.height = '500px';
-    imageElement.style.width = '300px';
-})
+        //comment
+        //   call to api using set credentials
+        fetch("https://api.astronomyapi.com/api/v2/studio/moon-phase", {
+            method: "POST",
+            headers: {
+                'Authorization': "Basic " + authString,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            console.log(data.data);
+            // creates and appends image tag to html
+            const imageSource = data.data.imageUrl;
+            console.log(imageSource);
+            const imageElement = document.createElement("img");
+            imageElement.src = imageSource;
+            const moons = document.getElementById('moons');
+            moons.appendChild(imageElement);
+            imageElement.style.height = '500px';
+            imageElement.style.width = '300px';
+        })
     });
-  } else {
+} else {
     console.log("Geolocation is not supported by this browser.");
-  }
+}
 
 
 // _________________________________________SAM BRESLIN____________________________________________________
@@ -165,6 +165,13 @@ saveBtn.addEventListener("click", goToSavedCards);
 
 function goToSavedCards() {
     window.location.href = "savedCards.html"
+}
+
+const buyBtn = document.getElementById("buy-cards-btn");
+buyBtn.addEventListener("click", goToAvailableDecks)
+
+function goToAvailableDecks() {
+    window.location.href = "buyCards.html"
 }
 
 //__________________________________________CONNER MARTIN__________________________________________________
