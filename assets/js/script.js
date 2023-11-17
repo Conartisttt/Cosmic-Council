@@ -8,6 +8,8 @@ const viewHoroscopeBtn = document.getElementById('dailybutton');
 const title = document.getElementById('zodiac');
 const date = document.getElementById('date');
 const horoscope = document.getElementById('horoscope');
+const titleEl = document.createElement("h2");
+const cardDesc = document.createElement("p");
 
 // function that fetches data and saves to local storage
 function findHoroscope() {
@@ -139,10 +141,9 @@ function createArray(cards) {
 }
 
 
+
 function generateCard() {
     const tarotCardDiv = document.getElementById("columnTwo");
-    const titleEl = document.createElement("h2");
-    const cardDesc = document.createElement("p");
     tarotImage.classList.remove("image-flip");
     const oldSaveButton = document.getElementById("save-card");
     if (oldSaveButton) {
