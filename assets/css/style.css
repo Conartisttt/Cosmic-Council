@@ -58,6 +58,7 @@ body {
     color: var(--reflective);
     padding: 50px;
     margin: 5px;
+    text-align: center;
 }
 
 #columnTwo {
@@ -85,8 +86,8 @@ body {
 }
 
 #dropdown {
-    width: 150px;
-    height: 40px;
+    width: 400px;
+    height: 60px;
     font-size: 15px;
     background-color: var(--jade-dragon);
     font-family:'Inknut Antiqua';
@@ -103,6 +104,8 @@ body {
 #dailybutton{
     font-size: 15px;
     font-family:'Inknut Antiqua';
+    width: 250px;
+    height: 60px;
 }
 
 #tarot-card-img {
@@ -131,4 +134,8 @@ body {
 
 #saved-cards-btn {
     background-color: var(--tricorn-black);
+}
+
+#zodiac , #date, #horoscope {
+    padding: 10px;
 }
