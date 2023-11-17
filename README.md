@@ -36,6 +36,28 @@ The following screenshot demonstrates the applications functionality:
 * Horoscope API (https://horoscope-app-api.vercel.app/)
 * Tarot API (https://app.swaggerhub.com/apis/ekswagger/tarot-api/1.3)
 
+## Demo
+![Website Demo GIF](./assets/images/CC%20gif.gif)
+
+## Images
+
+Start Page
+![Start Page](./assets/images/Start%20Page%20CC.png)
+
+Start Page pt.2
+![Start Page pt2](./assets/images/Scroll%20Down%20Start%20Page%20CC.png)
+
+Horoscope
+![Horoscope](./assets/images/Horoscope%20CC.png)
+
+Tarot Card Pull
+![Tarot Pull](./assets/images/Tarot%20Card%20Pull%20CC.png)
+
+Saved Cards Page
+![Saved Cards](./assets/images/Saved%20Cards%20CC.png)
+
+Buy Cards Page
+![Buy Cards](./assets/images/Buy%20Cards%20CC.png)
 
 ## Credits
 

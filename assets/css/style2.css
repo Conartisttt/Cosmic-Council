@@ -5,3 +5,10 @@
 #homepage {
     background-color: var(--tricorn-black);
 }
+
+#available-decks {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
