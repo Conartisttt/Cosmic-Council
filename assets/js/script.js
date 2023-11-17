@@ -10,9 +10,9 @@ const date = document.getElementById('date');
 const horoscope = document.getElementById('horoscope');
 
 // function that fetches data and saves to local storage
-function findHoroscope(dailyHoroscope) {
+function findHoroscope() {
     const sign = dropDown.value;
-    console.log(sign);
+    console.log(sign, typeof sign);
     fetch('https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=' + sign + '&day=tomorrow')
         .then(function (response) {
             return response.json();
@@ -27,7 +27,7 @@ function findHoroscope(dailyHoroscope) {
 
 // function that displays the zodiac sign, current date, and daily horoscope
 function displayHoroscope() {
-    title.textContent = dropDown.value;
+    title.textContent = dropDown.value + " ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆";
     let date = dayjs()
     $('#date').text(date.format('dddd, MMM D, YYYY'));
     const storedHoroscope = localStorage.getItem('dailyHoroscope');
