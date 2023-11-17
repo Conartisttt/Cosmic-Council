@@ -10,9 +10,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=IM+Fell+DW+Pica:ital@1&family=Leckerli+One&display=swap"
         rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=IM+Fell+DW+Pica:ital@1&family=Inknut+Antiqua:wght@500&family=Leckerli+One&display=swap" rel="stylesheet">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=IM+Fell+DW+Pica:ital@1&family=Inknut+Antiqua:wght@500&family=Leckerli+One&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -53,13 +55,15 @@
     </main>
 
     <section class="columns">
-        <div class="column is-half" id="columnTwo">
+        <div class="column is-half columnTwo" id="columnTwo">
             <h1>Tarot Card</h1>
             <button id="pull-card-btn" class="button is-medium">Pull Your Card</button>
-            <div id="card-div">
-                <img id="tarot-card-img" src="./assets/images/z_BACK.jpg">
+            <div id="tarot-card">
+                <div id="card-div" class="columnTwo">
+                    <img id="tarot-card-img" src="./assets/images/z_BACK.jpg">
+                </div>
             </div>
-            <button class="button is-medium">Save Your Card</button>
+            <!-- <button id="save-card" class="button is-medium">Save Your Card</button> -->
         </div>
 
         <div class="column is-half" id="columnThree">
@@ -68,12 +72,15 @@
         </div>
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
         integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
-<footer class="columnFour is-full">
-    <p>💫Made with love from the planet Venus by Daelyn Hiduchick, Conner Martin, Sam Breslin, and Shinayomi Ogunbayo💫 </p></footer>
+    <footer class="columnFour is-full">
+        <p>💫Made with love from the planet Venus by Daelyn Hiduchick, Conner Martin, Sam Breslin, and Shinayomi
+            Ogunbayo💫 </p>
+    </footer>
 </body>
 
 </html>

@@ -60,7 +60,7 @@ body {
     margin: 5px;
 }
 
-#columnTwo {
+.columnTwo {
     background-color: var(--jade-dragon);
     margin:10px;
     color: var(--reflective);

@@ -110,10 +110,16 @@ if (navigator.geolocation) {
 const tarotImage = document.getElementById("tarot-card-img");
 const cardDiv = document.getElementById("card-div");
 const pullCardBtn = document.getElementById("pull-card-btn");
+const buyBtn = document.getElementById("buy-cards-btn");
+const savedBtn = document.getElementById("saved-cards-btn");
+const cardsArr = [];
+const savedCards = JSON.parse(localStorage.getItem("savedcards")) || [];
 
+
+savedBtn.addEventListener("click", goToSavedCards);
+buyBtn.addEventListener("click", goToAvailableDecks)
 pullCardBtn.addEventListener("click", generateCard);
-const titleEl = document.createElement("h2");
-const cardDesc = document.createElement("p");
+
 
 function findTarot() {
     fetch('https://tarot-api-3hv5.onrender.com/api/v1')
@@ -125,7 +131,6 @@ function findTarot() {
         })
 };
 
-const cardsArr = [];
 
 function createArray(cards) {
     const tarotCardsArr = cards.cards;
@@ -133,8 +138,16 @@ function createArray(cards) {
     console.log(cardsArr);
 }
 
+
 function generateCard() {
+    const tarotCardDiv = document.getElementById("columnTwo");
+    const titleEl = document.createElement("h2");
+    const cardDesc = document.createElement("p");
     tarotImage.classList.remove("image-flip");
+    const oldSaveButton = document.getElementById("save-card");
+    if (oldSaveButton) {
+        oldSaveButton.remove();
+    }
     cardDesc.textContent = "";
     titleEl.textContent = "";
     const meaningArr = [];
@@ -155,23 +168,33 @@ function generateCard() {
         tarotImage.classList.add("image-flip");
         titleEl.textContent = randomCard.name + " - Reverse Pull";
     };
+    const saveButton = document.createElement("button");
+    saveButton.setAttribute("id", "save-card");
+    saveButton.classList.add("button", "is-medium");
+    saveButton.textContent = "Save Your Card";
+    saveButton.addEventListener("click", storeData);
+    tarotCardDiv.appendChild(saveButton);
 };
 
-findTarot();
 
-const saveBtn = document.getElementById("saved-cards-btn");
+function storeData() {
+    const saveTarotButton = document.getElementById("save-card").disabled = true;
+    const currentCard = document.getElementById("tarot-card");
+    console.log(currentCard.innerHTML)
+    savedCards.push(currentCard.innerHTML)
+    localStorage.setItem("savedcards", JSON.stringify(savedCards));
+}
 
-saveBtn.addEventListener("click", goToSavedCards);
-
+//function to redirect to savedCards html page
 function goToSavedCards() {
     window.location.href = "savedCards.html"
 }
 
-const buyBtn = document.getElementById("buy-cards-btn");
-buyBtn.addEventListener("click", goToAvailableDecks)
-
+//function to redirect to buyCards html page
 function goToAvailableDecks() {
     window.location.href = "buyCards.html"
 }
 
+
+findTarot();
 //__________________________________________CONNER MARTIN__________________________________________________
