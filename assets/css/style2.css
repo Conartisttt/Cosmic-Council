@@ -12,3 +12,11 @@
     margin-right: auto;
     width: 70%;
 }
+
+#saved-cards {
+    flex-wrap: wrap;
+}
+
+#card-div {
+    max-width: 400px;
+}
