@@ -8,21 +8,21 @@ const viewHoroscopeBtn = document.getElementById('dailybutton');
 const title = document.getElementById('zodiac');
 const date = document.getElementById('date');
 const horoscope = document.getElementById('horoscope');
-const titleEl = document.createElement("h2");
-const cardDesc = document.createElement("p");
 
 // function that fetches data and saves to local storage
 function findHoroscope() {
     const sign = dropDown.value;
     console.log(sign, typeof sign);
-    fetch('https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=' + sign + '&day=tomorrow')
+    let todaysDate = dayjs();
+    let today = todaysDate.format('YYYY-MM-DD');
+    fetch('https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=' + sign + '&day=' + today)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
             console.log(data);
             const dailyHoroscope = data.data.horoscope_data;
-            console.log(dailyHoroscope);
+            // console.log(dailyHoroscope);
             localStorage.setItem('dailyHoroscope', dailyHoroscope);
         })
 }
@@ -141,9 +141,10 @@ function createArray(cards) {
 }
 
 
-
 function generateCard() {
     const tarotCardDiv = document.getElementById("columnTwo");
+    const titleEl = document.createElement("h2");
+    const cardDesc = document.createElement("p");
     tarotImage.classList.remove("image-flip");
     const oldSaveButton = document.getElementById("save-card");
     if (oldSaveButton) {

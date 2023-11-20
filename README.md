@@ -13,7 +13,7 @@ so that I may read its interpreted meaning.
 
 We built this application for spiritual beings who are looking for guidance along the path to their higher self. Come to our site, select your zodiac sign, and generate your horoscope. Pull a tarot card from the deck and learn of its interpretted meaning for you. 
 
-The deployed application can be found [here](insert link to github pages)
+The deployed application can be found here: https://conartisttt.github.io/Cosmic-Counsel/
 
 ## Features
 
