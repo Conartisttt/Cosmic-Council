@@ -9,9 +9,14 @@ As a spiritual being,
 I want to pull a single tarot card,
 so that I may read its interpreted meaning.
 
+As a spiritual being,
+I want to view today’s moon phase,
+so that I may align my intentions with the universe.
+
+
 ## Description
 
-We built this application for spiritual beings who are looking for guidance along the path to their higher self. Come to our site, select your zodiac sign, and generate your horoscope. Pull a tarot card from the deck and learn of its interpretted meaning for you. 
+We built this application for spiritual beings who are looking for guidance along the path to their higher self. Come to our site, select your zodiac sign, and generate your horoscope. Pull a tarot card from the deck and learn of its interpretted meaning for you. See the upcoming moon phase to help set intentions.
 
 The deployed application can be found here: https://conartisttt.github.io/Cosmic-Counsel/
 
