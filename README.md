@@ -1,4 +1,4 @@
-# Project-1-Team
+# Cosmic-Counsel
 
 ## User Story
 As a spiritual being, 
@@ -20,10 +20,6 @@ The deployed application can be found here: https://conartisttt.github.io/Cosmic
 * Dynamically updated HTML & CSS, powered by JavaScript
 * Styled by Bulma, responsive to mobile layouts
 * Use of localStorage to persist data
-
-The following screenshot demonstrates the applications functionality:
-
-![Horoscope Page](./assets/images/[insert file name here])
 
 ## Technologies Used
 

@@ -109,20 +109,34 @@ if (navigator.geolocation) {
 
 // Working Tarot Card
 
+//establish variables using html id selectors
 const tarotImage = document.getElementById("tarot-card-img");
 const cardDiv = document.getElementById("card-div");
 const pullCardBtn = document.getElementById("pull-card-btn");
 const buyBtn = document.getElementById("buy-cards-btn");
 const savedBtn = document.getElementById("saved-cards-btn");
-const cardsArr = [];
-const savedCards = JSON.parse(localStorage.getItem("savedcards")) || [];
 
-
+//event listeners for buttons
 savedBtn.addEventListener("click", goToSavedCards);
 buyBtn.addEventListener("click", goToAvailableDecks)
 pullCardBtn.addEventListener("click", generateCard);
 
+//create elements for tarot card
+const titleEl = document.createElement("h2");
+const cardDesc = document.createElement("p");
 
+//tarot card array
+const cardsArr = [];
+
+//local storage array
+const savedCards = JSON.parse(localStorage.getItem("savedcards")) || [];
+
+function init() {
+    findTarot();
+}
+
+
+//fetch tarot card data from API and call function createArray
 function findTarot() {
     fetch('https://tarot-api-3hv5.onrender.com/api/v1')
         .then(function (response) {
@@ -133,18 +147,17 @@ function findTarot() {
         })
 };
 
-
+//push tarot card data to an array and log to console
 function createArray(cards) {
     const tarotCardsArr = cards.cards;
     cardsArr.push(...tarotCardsArr);
-    console.log(cardsArr);
+    console.log("We've got the cards.");
 }
 
 
+//choose random tarot card and add data to the screen
 function generateCard() {
     const tarotCardDiv = document.getElementById("columnTwo");
-    const titleEl = document.createElement("h2");
-    const cardDesc = document.createElement("p");
     tarotImage.classList.remove("image-flip");
     const oldSaveButton = document.getElementById("save-card");
     if (oldSaveButton) {
@@ -160,7 +173,6 @@ function generateCard() {
     meaningArr.push(randomCard.meaning_rev);
     const meaningLength = meaningArr.length
     const randomDirectionIndex = Math.floor(Math.random() * meaningLength);
-    console.log(randomCard); //leaving this for now to help with reverse pull this week
     titleEl.textContent = randomCard.name;
     cardDiv.prepend(titleEl);
     cardDesc.textContent = meaningArr[randomDirectionIndex];
@@ -179,10 +191,10 @@ function generateCard() {
 };
 
 
+//add card to local storage
 function storeData() {
     const saveTarotButton = document.getElementById("save-card").disabled = true;
     const currentCard = document.getElementById("tarot-card");
-    console.log(currentCard.innerHTML)
     savedCards.push(currentCard.innerHTML)
     localStorage.setItem("savedcards", JSON.stringify(savedCards));
 }
@@ -198,5 +210,5 @@ function goToAvailableDecks() {
 }
 
 
-findTarot();
+init();
 //__________________________________________CONNER MARTIN__________________________________________________
