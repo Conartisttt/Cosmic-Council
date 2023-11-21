@@ -13,17 +13,13 @@ so that I may read its interpreted meaning.
 
 We built this application for spiritual beings who are looking for guidance along the path to their higher self. Come to our site, select your zodiac sign, and generate your horoscope. Pull a tarot card from the deck and learn of its interpretted meaning for you. 
 
-The deployed application can be found [here](https://conartisttt.github.io/Cosmic-Counsel/)
+The deployed application can be found here: https://conartisttt.github.io/Cosmic-Counsel/
 
 ## Features
 
 * Dynamically updated HTML & CSS, powered by JavaScript
 * Styled by Bulma, responsive to mobile layouts
 * Use of localStorage to persist data
-
-The following screenshot demonstrates the applications functionality:
-
-![Horoscope Page](./assets/images/[insert file name here])
 
 ## Technologies Used
 
