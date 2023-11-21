@@ -1,7 +1,9 @@
 /*-------------Daelyn Hiduchick---------*/
+/* html {} defines the background color of the entire webpage */
 html {
     background-color: var(--reflective);
 }
+/* the root sets the color pallete for the site so it is eaiser to grab the same colors over and over without writing the code */
 :root {
     --tricorn-black:#2d2d2f;
     --coconut-husk:#6e593e;
@@ -15,17 +17,18 @@ html {
     --gold: #d1a657;
     --mainTextColor: black;
 }
-
+/* the body sets the font family for the entire website along with the size and the background color */
 body {
     font-family:'Inknut Antiqua';
     font-size: 20px;
     background-color: var(--reflective);
 }
+/* sets the background image for the hero / header part of the webpage */
 .hero {
     background-image: url('https://m.media-amazon.com/images/I/91gKsl048vL._AC_SL1500_.jpg');
     background-color: var(--tricorn-black);
 }
-
+/* sets the font size, alignment, color and padding for the title as well as adding a shadow to the text to make it easier to read */
 .title {
     font-size: 30px;
     text-align: center;
@@ -33,7 +36,7 @@ body {
     padding: 10px;
     text-shadow: 3px 3px 3px black;
 }
-
+/* /* sets the font size, alignment, color and padding for the subtitle as well as adding a shadow to the text to make it easier to read */
 .subtitle {
     font-size: 15px;
     text-align: center;
@@ -41,6 +44,7 @@ body {
     padding-bottom: 7px;
     text-shadow: 3px 3px 3px black;
 }
+/* sets the background color, font size, font family, text color and rounded corners on the buttons */
 .button {
     background-color: var(--connors-lakefront);
     font-size: 10px;
@@ -48,11 +52,11 @@ body {
     color: var(--reflective);
     border-radius: 8px;
 }
-
+/* add margins to the tarot column and moonphase column */
 .columns {
     margin: 10px;
 }
-
+/* sets background color, text color, and adds padding, margins, and text alignment for the horoscope column */
 .columnOne {
     background-color: var(--tricorn-black);
     color: var(--reflective);
@@ -60,7 +64,7 @@ body {
     margin: 5px;
     text-align: center;
 }
-
+/* sets background color, text color, and adds padding, margins, and text alignment for the tarot column */
 .columnTwo {
     background-color: var(--jade-dragon);
     margin:10px;
@@ -68,14 +72,14 @@ body {
     padding: 5px;
     text-align: center;
 }
-
+/* sets background color, text color, and adds padding, margins, and text alignment for the moon phase column */
 #columnThree {
     background-color: var(--connors-lakefront);
     color: var(--reflective);
     margin: 10px;
     text-align: center;
 }
-
+/* sets background color, text color, and adds padding, margins, and text alignment for the footer column */
 .columnFour {
     background-color: var(--tricorn-black);
     color: var(--reflective);
@@ -84,7 +88,7 @@ body {
     margin: 10px;
     text-align: center;
 }
-
+/* edits the width, height, font size, backround color, font family, and the rounded borders of the drop down menu */
 #dropdown {
     width: 400px;
     height: 60px;
@@ -94,48 +98,48 @@ body {
     border-radius: 8px;
 }
 
-
+/* sets font size and font family for the 'pull card' button */
 #pull-card-btn {
     font-size: 15px;
     font-family:'Inknut Antiqua';
 }
 
-
+/* sets font size, font family, width, and height of the 'view your horscope' button */
 #dailybutton{
     font-size: 15px;
     font-family:'Inknut Antiqua';
     width: 250px;
     height: 60px;
 }
-
+/* sets the height and width of the starting tarot card image (back of the card) */
 #tarot-card-img {
     max-height: 400px;
     max-width: 400px;
 }
-
+/* lets the tarot image be filled when a reverse card is pulled */
 .image-flip {
     transform: scaleY(-1);
 }
-
+/* aligns the moonphase image to the center of the column and adds 10px padding to the image */
 #moons {
     text-align: center;
     padding: 10px;
 }
 
-
+/* adds a shadow when hovering over any button on the page */
 .button:hover {
     box-shadow: 0 3px 6px 0;
     color: var(--reflective);
 }
-
+/* adds padding to the tarot cards that are pulled */
 #tarot-card-img {
-    padding: 7px;
+    padding: 6px;
 }
-
+/* sets background color for the 'see your saved cards' button on the top of the page */
 #saved-cards-btn {
     background-color: var(--tricorn-black);
 }
-
+/* sets padding to the zodiac name, date, and the horoscope that is displayed when you use the view your horoscope function */
 #zodiac , #date, #horoscope {
     padding: 10px;
 }
