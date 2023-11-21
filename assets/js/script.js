@@ -121,11 +121,19 @@ savedBtn.addEventListener("click", goToSavedCards);
 buyBtn.addEventListener("click", goToAvailableDecks)
 pullCardBtn.addEventListener("click", generateCard);
 
+//create elements for tarot card
+const titleEl = document.createElement("h2");
+const cardDesc = document.createElement("p");
+
 //tarot card array
 const cardsArr = [];
 
 //local storage array
 const savedCards = JSON.parse(localStorage.getItem("savedcards")) || [];
+
+function init() {
+    findTarot();
+}
 
 
 //fetch tarot card data from API and call function createArray
@@ -150,8 +158,6 @@ function createArray(cards) {
 //choose random tarot card and add data to the screen
 function generateCard() {
     const tarotCardDiv = document.getElementById("columnTwo");
-    const titleEl = document.createElement("h2");
-    const cardDesc = document.createElement("p");
     tarotImage.classList.remove("image-flip");
     const oldSaveButton = document.getElementById("save-card");
     if (oldSaveButton) {
@@ -204,5 +210,5 @@ function goToAvailableDecks() {
 }
 
 
-findTarot();
+init();
 //__________________________________________CONNER MARTIN__________________________________________________
